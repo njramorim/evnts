@@ -1,0 +1,42 @@
+@import 'reset',
+	'variables',
+	'custom',
+	'fonts',
+	'components/summary',
+	'components/events',
+	'components/hotels',
+	'components/rooms',
+	'components/form'; 
+
+body {
+	background-image: linear-gradient(to right, rgba(#1ebddb, 0.6) 0%, rgba(#11aaff, 0.6 )100%), url('../../static/bg.jpg');
+	background-attachment: fixed;
+	font-family: 'Proxima Nova', Georgia, sans-serif;
+	font-size: $normalText;	
+	padding: 20px 10px;
+	position: relative; 
+}
+
+.container {	
+	display: block;
+	margin: 40px auto;
+	max-width: 90%;
+	width: $wrapperWidth;
+
+	&.modal {
+		.summary, 
+		.events {
+			filter: blur(0.8px);
+		}
+
+		.close {
+			display: block;
+		}
+	}
+}
+
+@media screen and (max-width: $smart) {
+	.container {
+		margin: 0 auto;
+	}
+}

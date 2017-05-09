@@ -1,0 +1,142 @@
+.roomForm {	
+  background: #edb810;
+  border-radius: 0px 0px 15px 15px;
+  border-top: 1px solid  darken(#edb810, 15%);
+	margin: -18px 0 20px (-($itemHeight + 20));
+  padding: 15px;
+  position: absolute;
+  width: 100%;
+
+  legend {
+  	font-size: $bigText + 4;
+  	font-weight: 300;
+  }
+
+  label {
+  	display: inline-block;
+  	margin: 10px 20px 30px 20px; 
+  	position: relative;
+  	width: calc(33% - 40px);
+  	border-bottom:1px solid rgba(0, 0, 0, 0.23);
+
+  	p {
+  		display: none;
+  	}
+
+	  input {
+	  	background-color: transparent;
+	  	border: none;
+			font-weight: 300;
+			font-size: $bigText - 4px;
+	  	height: 40px;
+	  	outline: none;
+	  	padding-top: 15px;
+    	width: 100%;
+	  }
+  }
+
+  button {
+  	background-color: lighten(#fbd663, 5%);
+    border: 1px solid #efd176;
+    border-radius: 20px;
+  	box-shadow: 0px 2px 3px rgba(#000000, 0.1);
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+    height: 40px;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    outline: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s, box-shadow 0.4s ease-in;
+    width: 50%;
+
+    &:hover {
+    	background-color: lighten(#fbd663, 8%);
+    	box-shadow: 0px 2px 3px rgba(#000000, 0.4);
+    }
+
+    &:active {
+    	background-color: lighten(#fbd663, 10%);
+    	box-shadow: 0px 2px 3px rgba(#000000, 0.4);
+    }
+  }
+
+  > span {
+    border-radius: 50%;
+    background-color: darken(#edb810, 3%);
+    color: #565555;
+    cursor: pointer;
+    height: 40px;
+    right: 40px;
+    margin-top: -15px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    text-indent: -9999px;
+    transition: background-color 0.2s;
+    width: 40px;
+
+    &:hover {
+    	background-color: darken(#edb810, 5%);
+    }
+
+    &:before{
+      content: 'X';
+		  text-indent: 0px;
+		  display: block;
+		  width: 100%;
+		  height: 100%;
+		  position: absolute;
+		  top: 12px;
+		  font-weight: 900;
+		  left: 0;
+		  text-align: center;
+    }
+
+    &:after {
+    	border-radius: 50%;
+    	border-top: 2px solid darken(#edb810, 15%);  
+      content: '';
+		  text-indent: 0px;
+		  display: block;
+		  width: 100%;
+		  height: 100%;
+		  position: absolute;
+		  top: 0px;
+		  left: 0;
+		  text-align: center;
+    }
+  }
+}
+
+
+@media screen and (max-width: $smart) {
+	.roomForm  {
+    bottom: -20px;
+    height: 45vh;
+    left:0px;
+    margin-left:0px;
+    padding: 30px 5px 10px 5px;
+    position: absolute;
+
+    legend {
+    	font-size: 24px;
+    	text-align: center;
+    }
+
+    label {
+    	margin:5px auto;
+    	width: 100%;
+
+    	input {
+		    font-size: 16px;
+    		height: 30px;
+    	}
+    }
+
+  	button {
+  		margin-top: 4px;
+  	}
+	}
+}

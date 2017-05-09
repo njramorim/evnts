@@ -1,0 +1,175 @@
+.hotels {
+	animation: fade 0.4s ease-in;
+	background-color: #ffffff;
+	border-radius: ($itemHeight / 3);
+	box-shadow: 1px 5px 8px 0px rgba(#000000, 0.5);
+	display: block;
+	height: auto;
+	padding: 10px 20px 10px ($itemHeight + 20); 
+	position: fixed;
+	top:40%;
+	transform: translateY(-50%);
+	width: $wrapperWidth;
+	max-width: calc(90% - 20px);
+	z-index: 150;
+
+	.none {
+    padding: 10px;
+    text-align: center;
+    margin-left: -($itemHeight + 5);
+    font-weight: 700;
+    color: #0e4a60;
+	}
+
+	> ul > div:not(:only-child) {
+		display: none;
+	}
+
+	li {
+
+		> h3 {
+			font-size: $bigText;
+			font-weight: 300;
+		}
+
+		> h4 {
+			display: inline-block;
+			font-weight: 700;
+			margin:2px 0px;
+		}
+
+		span.distance {
+			color: rgba($textColor, 0.8);
+			font-weight: 900;
+			margin:0px 10px;
+		}
+
+		span.stars {
+			display: inline-block;
+			margin:0px 10px;
+
+			i {
+			  background-image: url('../../static/star.png');
+			  background-size: cover;
+			  display: inline-block;
+			  height: 14px;
+			  width: 14px;
+			}
+		}
+
+		img {
+			border-radius: 50%;
+			height: $itemHeight;
+			left: 10px;
+			position: absolute;
+			top:10px;
+		}
+
+		figcaption {
+			margin-top: 5px;
+			p {
+				display: block;
+			}
+			.amenities {
+				display: block;
+				margin: 10px 0;
+
+				li {   
+					display: inline-block;
+			    margin-bottom: 5px;
+			    margin-right: 5px;
+			    padding: 2px 6px;
+			    background: rgb(237, 184, 16);
+			    border-radius: 6px;
+				}
+			}
+		}
+	}
+
+	.message {
+		transition: width 0.3s ease-in, opacity 0.4s ease-in;
+
+		&.false {
+			opacity: 0;
+			pointer-events: none;
+			width:0;
+			height:0;
+		}
+		
+		&.true {
+			position: absolute;
+	    top: 50%;
+	    left: 0;
+	    height: 100px;
+	    font-size: 30px;
+	    font-weight: 900;
+	    width: 100%;
+	    text-align: center;
+		}
+
+		&:before {
+			color: #3a3838;
+			content:'Reserva solicitada =)';
+	    position: fixed;
+		  top: 60%;
+		  left: 0;
+		  height: 100px;
+		  line-height: 100px;
+		  font-size: 30px;
+		  font-weight: 900;
+		  width: 100%;
+		  text-align: center;
+		  z-index: 110;
+		}
+		&:after {
+	    content: '';
+	    position: fixed;
+	    top: -100vh;
+	    left: -100vw;
+	    width: 300vw;
+	    height: 300vh;
+	    background-color: rgba(246, 164, 8, 0.81);
+	    z-index: 100;
+		}
+
+	}
+}
+
+
+
+@media screen and (max-width: $smart) {	
+	.hotels {
+		padding-left: 20px;
+		top: 5%;
+		transform: translateY(0);
+
+		li {
+			height: 90%;
+
+			h3 {
+				text-align: center;
+			}
+
+			img {
+				display: none;
+			}
+
+			figcaption p{
+				max-height: 20vh;
+				overflow: hidden;
+	    }
+		}
+
+		.none {
+			margin: 0 auto;
+		}
+
+		.message:before {
+			font-size: 25px;
+			font-weight: 700;
+			top: 60%;
+			transform: translateY(-50%)
+		}
+	}
+
+}

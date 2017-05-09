@@ -1,0 +1,194 @@
+.events {
+	li {
+		background-color: #ffffff;
+		border-radius:  $itemHeight;
+		color: $textColor;
+		cursor: pointer;
+		display: inline-block;
+		height: $itemHeight;
+		margin: 10px auto;
+		overflow: hidden;
+		padding: 10px  20px 10px ($itemHeight + 5);
+		position: relative;
+		transition: box-shadow 0.3s ease-in;
+		width: 100%;
+
+		> h2, > h3, > p {
+			display: inline-block;
+			line-height: 70px;
+			height: 70px;
+			vertical-align: middle;
+			transition: line-height 0.33s ease-in, height  0.33s ease-in;
+		}
+
+		> h2 {
+			font-size: $bigText;
+			width: $columnBig;
+		}
+
+		> h3 {
+			font-size: $normalText;
+			width: $columnMedium;
+		}
+
+		> p {
+			font-size: $smallText;
+			font-weight: 700;
+			text-align: center;
+			height: 40px;
+			line-height: 00px;
+			width: $columnSmall;
+
+			> span {
+				display: inline-block;
+				height:20px;
+				line-height: 20px;
+				transition: line-height 0.4s ease-in, height  0.33s ease-in;
+				width: 100%;
+			}
+		}
+
+		img {
+			border-radius: 50%;
+			height: $itemHeight - 20;
+			left: 10px;
+			margin-top: -(($itemHeight - 20) / 2);
+			position: absolute;
+			top: 50%;
+			width: auto;
+		}
+
+		figcaption {
+			margin-top: 5px;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.38s ease-out;
+		}
+	}
+
+	li:hover {
+		box-shadow: 1px 5px 8px 0px rgba(103, 13, 214, 0.5);
+
+		> h2, > h3 {
+			height: 30px;
+			line-height: 30px;
+		}
+
+		> p {
+			height: 24px;
+			line-height: 12px;
+
+			> span {
+				height: 12px;
+				line-height: 12px;
+			}
+		}
+
+		figcaption {
+			opacity: 1;
+			pointer-events: initial;
+		}
+	}
+}
+
+
+@media screen and (max-width: $tablet) {	
+
+	.events {
+
+		li { 
+			border-radius: 40px;
+			height: 120px;
+			padding: 10px 30px 10px 30px;
+
+			> h2, > h3 {
+				height: 30px;
+				line-height: 30px;
+			}
+
+			> h2 {
+				width: 50%;
+			}
+
+			> h3 {
+				width: 30%;
+			}
+
+			> p {
+				height: 24px;
+				line-height: 12px;
+				width: 20%;
+
+				> span {
+					height: 12px;
+					line-height: 12px;
+				}
+			}
+
+			figure {
+
+				img {
+					display: none;
+				}
+
+				figcaption {
+					opacity: 1;
+					pointer-events: initial;
+				}
+			}
+		}
+	}	
+}
+
+@media screen and (max-width: $smart) {
+
+	.events {
+
+		li { 
+			height: auto;
+			padding: 10px;
+
+			> h2 {
+				font-weight: 700;
+			}
+
+			> h3:before  {
+				content: '@'
+			}
+
+			> h2, > h3, > p {
+				height: auto;
+				line-height: 20px;
+				display: block;
+				width: 100%;
+				text-align:  center;
+			}
+
+			> p > span {
+				width: auto;
+
+				+ span:before {
+					content: 'a';
+					margin:0 3px 0 3px;
+				}
+			}
+
+			figure {
+				display: none;
+			}
+		}
+
+		li:hover {
+
+			> h2, > h3, > p {
+				height: auto;
+				line-height: 20px;
+			}
+
+			figure {
+				display: none;
+			}
+
+		}
+	}
+}

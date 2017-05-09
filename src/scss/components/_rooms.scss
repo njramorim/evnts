@@ -1,0 +1,93 @@
+.rooms {
+	border-top:1px solid rgba(#000000, 0.35);
+	margin: 20px 0 10px (-($itemHeight + 5));
+	padding: 15px 0px; 
+	position: relative;border-top: 1px solid #a5800b;
+
+	&:before {
+    content: 'Quartos disponíveis:';
+    display: block;
+    font-weight: 300;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 0px rgba(0,0,0, 1);
+	}
+
+	li {
+		display: inline-block;
+		margin: 10px 20px;
+
+		> p {
+			font-weight: 700;
+			font-size: $normalText + 2;
+		}
+		
+		> span {
+			display: block;
+		}
+
+		span.price {
+			font-weight: 400;
+			margin:2px 0px;
+		}
+
+		span.beds {
+			font-weight: 300;
+			font-size: $normalText - 2;
+
+			span ~ span:before {
+				content: '|';
+				padding: 0px 5px;
+			}
+
+		}
+
+		button {
+	    background-color: #f2c729;
+    	box-shadow: 0px 2px 3px rgba(#000000, 0.1);
+	    border: none;
+	    cursor: pointer;
+	    display: block;
+	    font-weight: 300;
+	    height: 30px;
+	    margin-top: 5px;
+	    min-width: 150px;
+	    text-transform: uppercase;
+	    transition: background-color 0.2s, box-shadow 0.4s ease-in;
+	    width: 100%;
+
+	    &:before {
+	    	content: 'selecionar';
+	    }
+
+	    &:hover {
+	    	background-color: lighten(#f2c729, 5%);
+	    	box-shadow: 0px 2px 3px rgba(#000000, 0.4);
+	    }
+
+	    &:active, &:focus, &.active {
+	    	background-color: lighten(#f2c729, 15%);	
+	    	box-shadow: 0px 2px 3px rgba(#000000, 0.4);
+	    	outline: none;
+	    }
+
+	    &.active:before {
+	    	content: 'selecionado ';
+	    }
+
+	    &.active:after {
+	    	content: '\2713';
+	    	font-weight: 900;
+	    }
+		}
+
+	}
+}
+
+@media screen and (max-width: $smart) {
+	.rooms {
+    margin: 20px auto 10px auto;    
+    max-height: 35vh;
+    overflow: scroll;
+	}
+}

@@ -1,0 +1,22 @@
+$wrapperWidth: 900px;
+$itemHeight: 90px;
+
+$bigText: 24px;
+$normalText: 16px;
+$smallText: 13px;
+
+$textColor: #315595;
+$headerColor: #1d448a;
+
+$columnBig: 45%;
+$columnMedium: 30%;
+$columnSmall: 20%;
+
+$tablet: 900px;
+$smart: 550px;
+
+
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
