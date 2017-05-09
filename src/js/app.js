@@ -1,15 +1,6 @@
 import React,  {Component} from 'react'
 import ReactDOM from 'react-dom'
-import Events from './containers/events'
+import Container from './containers/container'
 
-class App extends Component {
-	render() {
-    return <main>
-    	<Events />
-    </main>
-  }
-}
 
-ReactDOM.render(<App />, document.getElementById('app'))
-
-console.log(1111)
+ReactDOM.render(<Container />, document.getElementById('app'))

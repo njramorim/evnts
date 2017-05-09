@@ -1,16 +1,8 @@
-const confHeaders = new Headers({
-  'Content-Type': 'text/html; charset=utf-8',
-  'X-Custom-Header': "ProcessThisImmediately",
-  'Access-Control-Allow-Origin': '*'
-})
 const config = {
-	method: 'GET',
- 	headers: confHeaders,
-  cache: 'default',
-  mode: 'cors'
+	method: 'GET'
 }
-const prefix = './data/'
-const suffix = '.json'
+const prefix = 'http://eng.evnts.rocks/'
+const suffix = ''
 
 export function getData(name) {
 	let url = prefix + name + suffix

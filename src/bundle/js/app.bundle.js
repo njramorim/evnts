@@ -25450,8 +25450,6 @@ module.exports = require('./lib/React');
 },{"./lib/React":159}],183:[function(require,module,exports){
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -25460,46 +25458,15 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _events = require('./containers/events');
+var _container = require('./containers/container');
 
-var _events2 = _interopRequireDefault(_events);
+var _container2 = _interopRequireDefault(_container);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+_reactDom2.default.render(_react2.default.createElement(_container2.default, null), document.getElementById('app'));
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var App = function (_Component) {
-   _inherits(App, _Component);
-
-   function App() {
-      _classCallCheck(this, App);
-
-      return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-   }
-
-   _createClass(App, [{
-      key: 'render',
-      value: function render() {
-         return _react2.default.createElement(
-            'main',
-            null,
-            _react2.default.createElement(_events2.default, null)
-         );
-      }
-   }]);
-
-   return App;
-}(_react.Component);
-
-_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
-
-console.log(1111);
-
-},{"./containers/events":188,"react":182,"react-dom":31}],184:[function(require,module,exports){
+},{"./containers/container":188,"react":182,"react-dom":31}],184:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25760,6 +25727,56 @@ exports.default = Summary;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _events = require('./events');
+
+var _events2 = _interopRequireDefault(_events);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Container = function (_Component) {
+   _inherits(Container, _Component);
+
+   function Container(props) {
+      _classCallCheck(this, Container);
+
+      return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).call(this, props));
+   }
+
+   _createClass(Container, [{
+      key: 'render',
+      value: function render() {
+         return _react2.default.createElement(
+            'main',
+            null,
+            _react2.default.createElement(_events2.default, null)
+         );
+      }
+   }]);
+
+   return Container;
+}(_react.Component);
+
+exports.default = Container;
+
+},{"./events":189,"react":182}],189:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
 		value: true
 });
 
@@ -25876,7 +25893,7 @@ var Events = function (_Component) {
 
 exports.default = Events;
 
-},{"./../components/event":184,"./../components/summary":187,"./../utils/getData":192,"./../utils/getPeriod":193,"./hotels":190,"react":182}],189:[function(require,module,exports){
+},{"./../components/event":184,"./../components/summary":187,"./../utils/getData":193,"./../utils/getPeriod":194,"./hotels":191,"react":182}],190:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25903,16 +25920,10 @@ var Events = function (_Component) {
   function Events(props) {
     _classCallCheck(this, Events);
 
-    var _this = _possibleConstructorReturn(this, (Events.__proto__ || Object.getPrototypeOf(Events)).call(this, props));
-
-    _this.state = {};
-    return _this;
+    return _possibleConstructorReturn(this, (Events.__proto__ || Object.getPrototypeOf(Events)).call(this, props));
   }
 
   _createClass(Events, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {}
-  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -25934,7 +25945,7 @@ var Events = function (_Component) {
               null,
               "Nome:"
             ),
-            _react2.default.createElement("input", { type: "text", placeholder: "Nome:" })
+            _react2.default.createElement("input", { type: "text", placeholder: "Nome" })
           ),
           _react2.default.createElement(
             "label",
@@ -25944,7 +25955,7 @@ var Events = function (_Component) {
               null,
               "Telefone:"
             ),
-            _react2.default.createElement("input", { type: "phone", placeholder: "Telefone:" })
+            _react2.default.createElement("input", { type: "phone", placeholder: "Telefone" })
           ),
           _react2.default.createElement(
             "label",
@@ -25954,7 +25965,7 @@ var Events = function (_Component) {
               null,
               "Email:"
             ),
-            _react2.default.createElement("input", { type: "email", placeholder: "Email:" })
+            _react2.default.createElement("input", { type: "email", placeholder: "Email" })
           ),
           _react2.default.createElement(
             "button",
@@ -25976,7 +25987,7 @@ var Events = function (_Component) {
 
 exports.default = Events;
 
-},{"react":182}],190:[function(require,module,exports){
+},{"react":182}],191:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26130,7 +26141,7 @@ var Hotels = function (_Component) {
 
 exports.default = Hotels;
 
-},{"./../components/hotel":185,"./../components/room":186,"./../utils/checkString":191,"./../utils/getData":192,"./form":189,"react":182}],191:[function(require,module,exports){
+},{"./../components/hotel":185,"./../components/room":186,"./../utils/checkString":192,"./../utils/getData":193,"./form":190,"react":182}],192:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26141,35 +26152,27 @@ function checkString(string1, string2) {
 	return string1 ? string1 : string2;
 }
 
-},{}],192:[function(require,module,exports){
+},{}],193:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 exports.getData = getData;
-var confHeaders = new Headers({
-  'Content-Type': 'text/html; charset=utf-8',
-  'X-Custom-Header': "ProcessThisImmediately",
-  'Access-Control-Allow-Origin': '*'
-});
 var config = {
-  method: 'GET',
-  headers: confHeaders,
-  cache: 'default',
-  mode: 'cors'
+	method: 'GET'
 };
-var prefix = './data/';
-var suffix = '.json';
+var prefix = 'http://eng.evnts.rocks/';
+var suffix = '';
 
 function getData(name) {
-  var url = prefix + name + suffix;
-  return fetch(url, config).then(function (response) {
-    return response.json();
-  });
+	var url = prefix + name + suffix;
+	return fetch(url, config).then(function (response) {
+		return response.json();
+	});
 }
 
-},{}],193:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
