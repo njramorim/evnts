@@ -1,10 +1,5 @@
-# evnts
-POC of a SPA using react, es6 and sass
-
-
-# Evnts SPA
-
-POC of a SPA with react, es6 sass, gulp
+# evnts SPA
+POC of a Single Page Application made with react, es6 and sass.
 
 
 ### Installing
