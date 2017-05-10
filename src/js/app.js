@@ -1,6 +1,13 @@
 import React,  {Component} from 'react'
 import ReactDOM from 'react-dom'
-import Container from './containers/container'
+import Events from './containers/events'
 
+class App extends Component {
+	render() {
+    return <main>
+    	<Events />
+    </main>
+  }
+}
 
-ReactDOM.render(<Container />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))
